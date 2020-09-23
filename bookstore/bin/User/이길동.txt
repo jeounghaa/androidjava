@@ -1,1 +1,0 @@
-leekd, 123, 이길동, 01011112222, lee@naver.com, 서울시 영등포구, null
