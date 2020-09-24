@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>결과가 여러 개의 행인 경우 검색</h3>
+	<hr color="red">
+	<ul>
+		<li>
+			<a href="all.jsp">전체 검색</a>
+		</li>
+		<li>조건 검색
+			<form action="all2.jsp"> <!-- 999 -->
+				검색할 전화번호: <input type="text" name="tel">
+				<button type="submit">조건 검색 시작(항목 전체 일치)</button>
+			</form>
+			<hr>
+			<form action="all3.jsp"> <!-- 6xx -->
+				검색할 전화번호: <input type="text" name="tel">
+				<button type="submit">조건 검색 시작(항목 부분 일치)</button>
+			</form>
+		</li>
+	</ul>
+</body>
+</html>
