@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function login() {
+		var id = document.getElementById('id').value
+		var pw = document.getElementById('pw').value
+		var pw2 = document.getElementById('pw2').value
+		if (id.length == 0 || pw.length == 0) {
+			alert('입력되지 않은 값이 있습니다. 입력해주세요')
+		} else if(id.length >= 5) {
+			alert('입력된 id가 5글자 이상입니다.')
+		} else if(pw != pw2){
+			document.getElementById('result').innerHTML = '<font color=red>패스워드가 다름</font>'
+		} else{
+			location.href = 'login.jsp?id=' + id + '&pw=' + pw
+		}
+	}
+	function overlab() {
+		var id = document.getElementById('id').value
+		var pw = document.getElementById('pw').value
+		location.href = 'equal.jsp?id' + id + '&pw=' + pw
+	}
+	// 선택자(selector, 태그명, 클래스명, id명): 함수가 다 달랐음
+	document.getElementById('test')
+	// 선택자에 따라 구분하지 않고 함수가 동일
+	document.querySelector('#test'), querySelectorAll('.test')
+	// jquery에서 선택자를 할 때는 $로 대체(대괄호는 속성)
+	$('#test'), $('input'), $('.td[href == www.naver.com]')
+</script>
+</head>
+<body>
+		아이디 <input type="text" name="id" id="id"><br>
+		비밀번호 <input type="text" name="pw" id="pw"><br>
+		비밀번호 확인 <input type="text" name="pw2" id="pw2"><br>
+		<div id="result"></div>
+		<button onclick="overlab()">아이디 중복 확인</button><br>
+		<button onclick="login()">로그인</button>
+</body>
+</html>

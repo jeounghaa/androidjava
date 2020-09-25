@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function sum(x, y) {
+		alert('두 수의 합은 ' + (x+y))
+	}
+	function check() {
+		data = prompt('회원가입할 id를 입력하세요')
+		result = false;
+		if (data.length == 0) {
+			alert('id를 입력안했음')
+		} else {
+			alert('당신이 입력한 id는 ' + data)
+			result = true;
+		}
+		return result
+	}
+	function same() {
+		n1 = document.getElementById('pw1').value
+		n2 = document.getElementById('pw2').value
+		if (n1 == n2) { // 타입과 상관없이 비교 가능
+			// 타입도 비교하고 싶다면 ===
+			alert('동일함')
+		} else {
+			alert('동일하지 않음')
+		}
+		/* result2 = check()
+		alert('id체크한 결과는 ' + result2) */
+	}
+</script>
+</head>
+<body>
+	<button onclick="sum(200, 300)">더하기</button>
+	<button onclick="check()">입력값 넣었는지 체크</button>
+	<hr>
+	패스워드1: <input type="text" id="pw1" name="pw1"><br>
+	패스워드2: <input type="text" id="pw2" name="pw2"><br>
+	<button onclick="same()">입력값 동일한지 체크</button>
+</body>
+</html>

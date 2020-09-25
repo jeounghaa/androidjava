@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- CDN방식으로 링크 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	// body부터 읽어와야함
+	$(function() {
+		$('#b1').click(function() {
+			pw = $('#pw').val() // 태그사이의 텍스트는 text()
+			pw2 = $('#pw2').val()
+			if (pw == pw2) {
+				$('div').html('<font color=red><b>동일합니다.</b></font>')
+			} else {
+				$('div').html('<font color=red><b>동일하지않습니다.</b></font>')
+			}
+		})
+	})
+</script>
+</head>
+<body>
+	패스워드 <input type="text" name="pw" id="pw"><br>
+	패스워드 확인 <input type="text" name="pw2" id="pw2"><br>
+	<button id="b1">클릭</button>
+	<div></div>
+</body>
+</html>

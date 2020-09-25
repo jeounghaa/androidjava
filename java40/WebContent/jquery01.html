@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	// 함수 정의 + 사용 정의 => 익명함수
+	// callback함수
+	// document.ready() => body부분부터 브라우저가 읽고와야함
+	$(function() {
+		$('#b1').click(function() { 
+			alert('나를 눌렀군요!')
+		})
+		$('#b2').click(function() { 
+			alert('나를 눌렀군요!')
+		})
+		$('#b3').click(function() { 
+			var id2 = 'root'
+			var pw2 = '1111'
+			
+			id = $('#id').val()
+			pw = $('#pw').val()
+			
+			if (id == id2 && pw == pw2) {
+				// $('div').html('<font color=red><b>로그인ok</b></font>')
+				$('div').appendChild('<font color=red><b>로그인ok</b></font>')
+			} else {
+				$('div').html('<font color=red><b>로그인not</b></font>')
+			}
+		})
+	})
+</script>
+</head>
+<body>
+	<button id="b1">나를 눌러</button>
+	<button id="b2">나도 눌러</button>
+	<br>
+	아이디 <input type="text" id="id"><br>
+	패스워드 <input type="text" id="pw"><br>
+	<button id="b3">로그인 처리</button>
+	<div></div>
+</body>
+</html>

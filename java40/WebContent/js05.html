@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function check() {
+		id2 = document.getElementById('id2')
+		// id2의 타입을 출력
+		console.log(typeof id2)
+		// DOM(Document Obejct Model) Tree의 node Object(객체)
+		id2Value = id2.value
+		console.log('당신의 id는 ' + id2Value)
+		pwValue = document.getElementById('pw').value
+		if (id2Value.length != 0 && pwValue.length != 0) {
+			alert('입력되지 않은 값이 있습니다. 확인하여 입력해주세요!')
+		} else {
+			location.href = 'login.jsp?id=' + id2Value + '&pw=' + pwValue
+		}
+	}
+</script> 
+</head>
+<body>
+	<h3>로그인 화면</h3>
+	<hr>
+	아이디 <input type="text" id="id2"><br>
+	패스워드 <input type="text" id="pw"><br>
+	<button onclick="check()">로그인처리</button>
+</body>
+</html>
