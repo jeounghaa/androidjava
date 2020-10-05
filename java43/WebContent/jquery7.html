@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#b1').click(function() {
+			$.ajax({ /* 비동기통신 */
+				url: "call2.jsp",
+				data: {
+					score: $('#score').val()
+				},
+				success: function(result) {
+					alert('성공!');
+					console.log("받은 데이터: " + result);
+					if (result == '최우수' || result == '우수') {
+						alert('통과!')
+					} else {
+						alert('재시험!');
+					}
+				}
+			})
+			
+		})
+	})
+</script>
+</head>
+<body>
+	<h3>비동기통신으로 서버와 통신하기</h3>
+	ajax테스트: <input type="text" id="test"> <input type="button" value="ajax테스트(test.jsp)">
+	결제금액: <input type="text" id="money"><br>
+	1)계좌이체, 2)신용카드, 3)휴대폰결제<br>
+	결제수단: <input type="text" id="payment"><input type="button" value="결제하기"><br>
+	<hr style="color: red">
+	<button id="b1">내 tomcat서버로 통신해보자</button>
+</body>
+</html>

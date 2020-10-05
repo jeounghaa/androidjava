@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#b1').click(function() {
+			$.ajax({ /* 비동기통신 */
+				url: "check2.jsp",
+				data: {
+					id: $('#id').val()
+				},
+				success: function(result) {
+					// 0이면 id가 없음, 1이면 id가 있음
+					$('#d1').html('<font color=red>' + result + '</font>');
+				}
+			})
+			
+		})
+	})
+</script>
+</head>
+<body>
+	아이디 <input type="text" id="id">
+	<button id="b1">중복체크</button>
+	<hr>
+	<div id="d1">
+	</div>
+</body>
+</html>

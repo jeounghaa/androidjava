@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#b1').click(function() {
+			$.ajax({ /* 비동기통신 */
+				url: "call2.jsp",
+				data: {
+					score: $('#score').val()
+				},
+				success: function(result) {
+					alert('성공!');
+					console.log("받은 데이터: " + result);
+					if (result == '최우수' || result == '우수') {
+						alert('통과!')
+					} else {
+						alert('재시험!');
+					}
+				}
+			})
+			
+		})
+	})
+</script>
+</head>
+<body>
+	당신의 성적 <input type="text" id="score">
+	<button id="b1">내 tomcat서버로 통신해보자</button>
+</body>
+</html>

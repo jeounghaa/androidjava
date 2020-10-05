@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- xml: eXtensible(확장가능한) Markup(tab) Language -->
+<!-- 
+	네트워크로 연결된 노드간 많은 데이터 전달 목적으로
+	데이터 앞에 키를 더해 값을 명시하는 역할
+	키역할을 태그가 하게됨. 값은 태그 사이의 텍스트로 지정 
+-->
+<result>
+	<total>100000</total>
+	<date>2020.10.05</date>
+	<fields>신용카드</fields>
+	<name>홍길동</name>
+</result>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#b1').click(function() {
+			$.ajax({ /* 비동기통신 */
+				url: "pay.jsp",
+				data: {
+					payment: $("#payment option:selected").val()
+				},
+				success: function(m) {
+					$('#money').val(m);
+				}
+			})
+		})
+		$('#b2').click(function() {
+			$.ajax({ /* 비동기통신 */
+				url: "checkId.jsp",
+				data: {
+					id: $("#id").val()
+				},
+				success: function(result) {
+					$('#d1').html('<font color=red>' + result + '</font>');
+				}
+			})
+		})
+		$('#b3').click(function() {
+			$.ajax({
+				url:"tel.jsp",//연결될 url
+				data:{
+					tel : $("#tel").val()
+				},
+				success : function(result){//처리결과
+					$('#d1').html(result)
+				}
+			})//ajax
+		})//b1click
+	})
+</script>
+</head>
+<body>
+	결제금액: <input type="text" id="money" readonly="readonly" value="10000"><br>
+	결제수단: 
+	<select id="payment">
+		<option value="계좌이체">계좌이체</option>
+		<option value="신용카드">신용카드</option>
+		<option value="휴대폰결제">휴대폰결제</option>
+	</select>
+	<input type="button" value="결제하기" id="b1"><br>
+	회원가입할 id입력: <input type="text" id="id">
+	<input type="button" value="회원가입시 id중복체크" id="b2"><br>
+	인증받을 전화번호 입력: <input type="text" id="tel">
+	<button id="b3">인증번호 받기</button>
+	<hr>
+	<div id="d1"></div>
+</body>
+</html>

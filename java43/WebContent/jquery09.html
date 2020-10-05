@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js">
+	//제이쿼리 링크 연결용
+</script>
+<script type="text/javascript">
+	//콜백함수 사용용
+	//ajax
+	$(function() {/*비동기통신*/
+		$('#id').keyup(function() {
+			$.ajax({
+				url : "length.jsp",//연결될 url
+				data : {
+					id : $("#id").val()
+				},
+				success : function(result) {//처리결과
+					$('#d1').html("아이디의 길이는" + result)
+				}
+			})//ajax
+		})//id.keyup
+		$('#pwch').keyup(function() {
+			$.ajax({
+				url : "pwcheck.jsp",//연결될 url
+				data : {
+					pw : $("#pw").val(),
+					pwch : $("#pwch").val()
+				},
+				success : function(result) {//처리결과
+					$('#d2').html(result)
+				}
+			})//ajax
+		})//id.keyup
+	})//ready end
+</script>
+</head>
+<body>
+	아이디:
+	<input type="text" id="id"> 패스워드:
+	<input type="text" id="pw"> 패스워드 확인:
+	<input type="text" id="pwch">
+	<button id="b1">아이디 길이 체크</button>
+	<button id="b2">패스워드 동일 여부 체크</button>
+	<hr>
+	<div id="d1"></div>
+	<div id="d2"></div>
+
+</body>
+</html>
