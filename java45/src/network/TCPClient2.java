@@ -6,7 +6,7 @@ public class TCPClient2 {
 
 	public static void main(String[] args) throws Exception {
 		Socket socket = new Socket("localhost", 9100);
-		System.out.println("client2 ¼­¹ö¿Í ¿¬°áµÊ");
+		System.out.println("client2 ì„œë²„ì™€ ì—°ê²°ë¨");
 	}
 
 }
