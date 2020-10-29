@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- <bean id="bbsDAO" class="com.mega.mvc05.BbsDAO"></bean>
+<bean id="bbss" class="com.mega.mvc05.BbsService">
+	파라메터 있는 생성자 호출
+	<constructor-arg ref="bbsDAO"></constructor-arg>
+	setDao()를 호출
+	<property name="dao" ref="bbsDAO"></property>
+</bean> -->
+
+<!-- <bean id="memberDAO" class="com.mega.mvc05.MemberDAO"></bean>
+<bean id="members" class="com.mega.mvc05.MemberService">
+	<property name="dao" ref="memberDAO"></property>
+</bean> -->
+
+<bean id="mybatis" class="org.mybatis.spring.SqlSessionTemplate">
+	<constructor-arg ref="config"></constructor-arg>
+</bean>
+<!-- mybatis설정만 담당하는 라이브러리: sql정의 -->
+<bean id="config" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<property name="configLocation" value="classpath:mybatis-config.xml"></property>
+	<property name="dataSource" ref="dbcp"></property>
+</bean>
+<bean id="dbcp" class="org.apache.commons.dbcp.BasicDataSource">
+	<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+	<property name="url" value="jdbc:mysql://127.0.0.1:3366/shop1"></property>
+	<property name="username" value="root"></property>
+	<property name="password" value="1234"></property>
+</bean>
+
+</beans>
