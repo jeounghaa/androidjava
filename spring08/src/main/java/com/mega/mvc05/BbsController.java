@@ -17,11 +17,14 @@ public class BbsController {
 	ReplyService service2;
 	
 	@RequestMapping("one.do")
-	public void one(BbsVO bbsVO, Model model) {
+	public void one(BbsVO bbsVO, Model model, HttpSession session) {
 		// 게시물 하나를 가지고 오고
 		model.addAttribute("one", service.one(bbsVO));
 		// 게시물의 댓글 리스트를 가지고 와야함
 		model.addAttribute("list", service2.list(bbsVO.getNo()));
+		model.addAttribute("total", service2.list(bbsVO.getNo()).size());
+		// 로그인한 사람 세션으로 설정!
+		session.setAttribute("id", "ssanpere13"); 
 	}
 	
 	@RequestMapping("insert.do")

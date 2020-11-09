@@ -7,4 +7,7 @@
 	<select id="list" parameterType="Integer" resultType="replyVO">
 		SELECT * FROM reply where original = #{no}
 	</select>
+	<delete id="delete" parameterType="replyVO">
+		delete from reply where no = #{no}
+	</delete>
 </mapper>

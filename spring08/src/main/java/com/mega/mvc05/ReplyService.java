@@ -14,12 +14,17 @@ public class ReplyService {
 	@Autowired
 	ReplyDAO dao;
 	
-	public void create(ReplyVO vo) {
-		dao.create(vo);
+	public int create(ReplyVO vo) {
+		int result = dao.create(vo);
+		return result;
 	}
 	
 	public List<ReplyVO> list(int original) {
 		return dao.list(original);
 	}
 	
+	public int delete(ReplyVO vo) {
+		int result = dao.delete(vo);
+		return result;
+	}
 }

@@ -14,14 +14,20 @@ public class ReplyDAO {
 	@Autowired
 	SqlSessionTemplate mybatis;
 	
-	public void create(ReplyVO vo) {
+	public int create(ReplyVO vo) {
 		int result = mybatis.insert("reply.create", vo);
+		return result;
 	}
 	
 	public List<ReplyVO> list(int original) {
 		List<ReplyVO> list = mybatis.selectList("reply.list", original);
 		System.out.println("댓글 리스트" + list);
 		return list;
+	}
+	
+	public int delete(ReplyVO vo) {
+		int result = mybatis.delete("reply.delete", vo);
+		return result;
 	}
 	
 }
