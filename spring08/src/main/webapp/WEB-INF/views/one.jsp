@@ -22,6 +22,7 @@
 					// alert(result)
 					$('#tab').append(result)
 					location.reload()
+					$('#test').html('${one.no}')
 				}
 			})
 		})
@@ -41,7 +42,7 @@
 		<td height="50">${one.no}</td>
 		<td>${one.title}</td>
 		<td>${one.content}</td>
-		<td>${one.writer}</td>
+		<td id="test">${one.writer}</td>
 	</tr>
 </table>
 <hr color="red">

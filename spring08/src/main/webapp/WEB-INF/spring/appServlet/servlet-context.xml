@@ -3,9 +3,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
@@ -23,6 +25,22 @@
 	
 	<context:component-scan base-package="com.mega.mvc05" />
 	
+	<!-- AOP를 annotation으로 설정하겠다 -->
+	<aop:aspectj-autoproxy />
 	
+	<aop:config>
+		
+		<aop:pointcut expression="execution(** com.mega.*.*.person(..))" id="person"/>
+		<aop:pointcut expression="execution(** com.mega.*.*.person(..))" id="person"/>
+		<aop:pointcut expression="execution(** com.mega.*.*.bucket(..))" id="bucket"/>
+		<aop:pointcut expression="execution(** com.mega.*.*.jumun(..))" id="jumun"/>
+		
+		<aop:aspect ref="aop">
+			<aop:before method="login" pointcut-ref="person"/>
+			<aop:after method="logout" pointcut-ref="person"/>
+			<aop:after method="login" pointcut-ref="bucket"/>
+			<aop:after method="logout" pointcut-ref="jumun"/>
+		</aop:aspect>
+	</aop:config>
 	
 </beans:beans>
