@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_purple"
+    tools:context=".Main2Activity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/bb1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@android:color/holo_orange_light"
+        android:text="눌러보세요"
+        android:layout_marginTop="50dp"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:layout_marginTop="30dp"
+        app:srcCompat="@drawable/find" />
+
+    <TextView
+        android:id="@+id/tt2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="숫자1"
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        />
+
+
+    <EditText
+        android:id="@+id/ee1"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimary"
+        android:inputType="number"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tt3"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="숫자2"
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        />
+    <EditText
+        android:id="@+id/ee2"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimary"
+        android:inputType="number"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        >
+
+        <Button
+            android:id="@+id/bb2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="110dp"
+            android:text="더하기"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:text="결과값"
+            android:background="@android:color/holo_green_light"
+            android:padding="20dp"
+            android:textSize="30sp" />
+    </LinearLayout>
+</LinearLayout>
