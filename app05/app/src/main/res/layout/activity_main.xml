@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!--gravity 위치선정-->
+    <Chronometer
+        android:id="@+id/ch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:format="시간 측정: %s"
+        android:gravity="center"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:textColor="#EF0808"
+        />
+
+    <TimePicker
+        android:id="@+id/timeP"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:background="#BCA9F5"
+        android:timePickerMode="spinner"
+        />
+
+    <CalendarView
+        android:id="@+id/cal"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        />
+    <!--태그 사이의 내용이 없어서 빈태그, empty element-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <Button
+            android:id="@+id/start"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="start"
+            android:textSize="15sp"
+            android:background="@color/colorAccent"
+            android:layout_marginRight="5dp"
+            />
+
+        <Button
+            android:id="@+id/end"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="end"
+            android:textSize="15sp"
+            android:background="@color/colorAccent"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/calBtn"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="#F78181"
+        android:text="날짜 가져오기"
+        android:textSize="15sp"
+        android:drawableLeft="@android:drawable/ic_menu_my_calendar"
+        />
+
+    <Button
+        android:id="@+id/timeBtn"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="#F7FE2E"
+        android:drawableLeft="@android:drawable/ic_lock_idle_alarm"
+        android:text="시간 가져오기"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/nextBtn"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="#BCF5A9"
+        android:text="다음 액티비티"
+        android:textSize="15sp"
+        android:drawableLeft="@android:drawable/ic_media_play"
+        />
+</LinearLayout>
