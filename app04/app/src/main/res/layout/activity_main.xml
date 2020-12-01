@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        >
+       <Button
+           android:id="@+id/sw"
+           android:layout_width="wrap_content"
+           android:layout_height="50dp"
+           android:text="스웨덴"
+           android:textSize="30sp"
+           android:background="@color/lightBlue"
+           android:textColor="@color/green"
+           />
+        <Button
+            android:id="@+id/cz"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="체코"
+            android:textSize="30sp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/lightGray"
+            android:textColor="@color/green"
+            />
+        <Button
+            android:id="@+id/po"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="포르투갈"
+            android:textSize="30sp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/lightPurple"
+            android:textColor="@color/green"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        >
+
+        <EditText
+            android:id="@+id/e1"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="다른 나라들을 검색해보세요!"
+            android:textSize="20sp"
+            />
+        <Button
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="검색"
+            android:textSize="25sp"
+            android:background="@color/colorAccent"
+            />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="국내 여행지를 보시려면 다음을 클릭해주세요"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        />
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="다음"
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        android:background="@color/colorAccent"
+        android:layout_marginTop="10dp"
+        />
+
+</LinearLayout>
